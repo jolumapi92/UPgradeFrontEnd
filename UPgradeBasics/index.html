@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Questrial&display=swap" rel="stylesheet">
     <title>Welcome to the Jungle</title>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
@@ -28,6 +29,15 @@
             readable code.     
         </p>
     </article>
+
+    <article class="article-3">
+        <p>
+            JavaScript is an awesome and versatile programming language. It's almost like a super hero, it has the capability of both front end and back end 
+            adaptability.
+        </p>
+        <h3>JavaScript</h3>
+    </article>
+
     <article class="article-2">
         <h3>JavaScript</h3>
         <p class="instructions-for-javascript">
@@ -38,17 +48,19 @@
         <div class="bubble-list-container">
             <h2>Ideas</h2>
             <div class="container-list-ideas">
-                <ul class="list-huntingyou">
+                <ul id="list-hunting" class="list-huntingyou">
                     
                 </ul>
-                <input class="area-input-ideas" placeholder="Write them down" type="textarea">
             </div>
+            <input id="input-add-idea-input" class="area-input-ideas" placeholder="Write them down" type="textarea">
             <div class="container-btns">
-                <button class="btn-regular">Add</button>
-                <button class="btn-regular">Process</button>
+                <button id="btn-add-idea" class="btn-regular">Add</button>
+                <button id="btn-heal" class="btn-regular">Process</button>
+                <button id="btn-clean"> Clean </button>
             </div>
         </div>
     </article>
     <footer></footer>
+    <script type="module" src="/javascript/index.js"></script>
 </body>
 </html>
