@@ -1,18 +1,14 @@
 
 function Human(name) {
     this.name = name;
-    this.saySomething = function() { alert(`My name is ${this.name}`) }
 }
 
 function Dog(name) {
     this.name = name;
-    this.saySomething = function() { alert("Woof woof Woooooooof") }
 }
 
 Human.prototype.saySomething = function() { alert(`My name is ${this.name}`) }
 Dog.prototype.saySomething = function() { alert("Woof woof Woooooooof") }
-
-
 
 const createSomething = () => {
     const name = faker.name.firstName();
@@ -23,7 +19,15 @@ const createSomething = () => {
     }
     while( (answer != 'dog')  && (answer != 'human' ) )
 
-    alert("Cleared")
+    if(answer === "dog") {
+        const dog = new Dog(name);
+        console.log(dog.saySomething());
+    }
+
+    if(answer == 'human') {
+        const human = new Human(name);
+        console.log(human.saySomething());
+    }
 }
 
 export { createSomething };
