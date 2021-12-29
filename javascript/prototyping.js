@@ -21,11 +21,13 @@ const createSomething = () => {
 
     if(answer === "dog") {
         const dog = new Dog(name);
-        console.log(dog.saySomething());
+        // Directly accesing
+        console.log(dog.__proto__.saySomething());
     }
 
     if(answer == 'human') {
         const human = new Human(name);
+        //Looking up for the method 
         console.log(human.saySomething());
     }
 }
