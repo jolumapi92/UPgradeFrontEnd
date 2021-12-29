@@ -14,13 +14,28 @@ const humanCreate = () => {
     let job = faker.name.jobTitle();
     let phone = faker.phone.phoneNumber();
     let suffix = faker.name.suffix();
-    let gender = prompt("Male or Female");
+    let gender = prompt("Male or Female").toLowerCase();
 
     human = new Human(name, last, job, phone, suffix, gender);
-
+    let letStringInfo = "";
     const list = document.querySelector("#list-humans");
     const element = document.createElement('li');
-    element.innerText = human.name;
+    if(human.gender === "male" || human.gender === "female") {
+        for (const key in human) {
+            letStringInfo += human[key];
+            letStringInfo += " ";
+        }
+        element.innerText = letStringInfo;
+        element.classList.add("list-item");
+    } else { 
+        for (const key in human) {
+            letStringInfo += human[key];
+            letStringInfo += " ";
+        }
+        element.innerText = letStringInfo;
+        element.classList.add("list-item-monster");
+     }
+    
     list.appendChild(element);
 }
 
