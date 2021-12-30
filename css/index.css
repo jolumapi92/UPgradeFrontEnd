@@ -264,7 +264,6 @@ section h1 {
 }
 
 .container-exercises {
-  height: 70vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -281,27 +280,20 @@ section h1 {
   position: relative;
 }
 
-user-card {
-  -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  width: 80%;
-  margin: 10px;
-  padding: 1em;
-  border-radius: 12px;
-}
-
-chart-jose {
-  width: 80%;
-  margin: 10px;
-  padding: 1em;
-  border-radius: 12px;
-}
-
 .instrunctions-landing {
   position: absolute;
   bottom: 0;
   font-weight: 100;
   font-size: 20px;
+}
+
+chart-jose {
+  width: 80%;
+}
+
+chart-api {
+  width: 80%;
+  margin: 50px;
 }
 
 .container-exercises-floating-box {

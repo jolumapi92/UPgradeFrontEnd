@@ -264,7 +264,6 @@ body {
   }
 
   .container-exercises {
-      height: 70vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -280,6 +279,15 @@ body {
     font-weight: 100;
     font-size: 20px;
   }
+
+  chart-jose {
+    width: 80%;
+  }
+
+  chart-api {
+    width: 80%;
+    margin: 50px;
+  } 
 
   .container-exercises-floating-box {
       height: 100%;
