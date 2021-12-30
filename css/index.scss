@@ -264,11 +264,20 @@ body {
   }
 
   .container-exercises {
-      height: 100vh;
+      height: 70vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       position: relative;
+  }
+
+  user-card {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    width: 80%;
+    margin: 10px;
+    padding: 1em;
+    border-radius: 12px;
   }
 
   .container-exercises-floating-box {

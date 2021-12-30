@@ -264,10 +264,14 @@ section h1 {
 }
 
 .container-exercises {
-  height: 100vh;
+  height: 70vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -275,6 +279,15 @@ section h1 {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
+}
+
+user-card {
+  -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  width: 80%;
+  margin: 10px;
+  padding: 1em;
+  border-radius: 12px;
 }
 
 .container-exercises-floating-box {
