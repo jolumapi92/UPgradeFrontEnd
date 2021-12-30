@@ -20,20 +20,20 @@
         </div>
     </header>
     <section>
-        <h1>Practice <span>|</span>  Front End <span> Prototyping / Inheritance</span>  </h1>
+        <h1>Practice <span>|</span>  Front End <span> Promises / Async / AJAX</span>  </h1>
         <img id="img-brain" src="/assets/updating-brain.svg" alt="">
     </section>
     <article class="container-exercises">
-        <h1 class="header-interactive">#Interactive</h1>
-        <div class="conatiner-inside-exercises">
-            
-            <p>Instructions: Click on the button to interact with the terminal while 
-                looking at the code.
-            </p>
-            <ul id="list-humans"> 
-
-            </ul>
-            <button id="btn-create-human"> Create </button>
+        <div style="display: none;" id="blackbox" class="container-exercises-floating-box">
+            <div id="whiteboard" class="white-board">
+                <p id="close-x">X</p>
+            </div>
+        </div>
+        <div> 
+            <button id="fetch"> Fetch </button>
+            <button id="xml" > XML </button>
+            <button id="promise" > Promise </button>
+            <button id="async" > Async  </button>
         </div>
     </article>
     <script type="module" src="/javascript/index.js"></script>
