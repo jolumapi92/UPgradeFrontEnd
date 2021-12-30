@@ -10,6 +10,7 @@
     <title>Welcome to the Jungle</title>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
@@ -20,12 +21,14 @@
         </div>
     </header>
     <section>
-        <h1>Practice <span>|</span>  Front End <span> Web Components </span>  </h1>
+        <h1>Practice <span>|</span>  Final Test <span> Web Components </span>  </h1>
         <img id="img-brain" src="/assets/updating-brain.svg" alt="">
+        <p class="instrunctions-landing"> <strong> Instructions: </strong> Use every single concept you have learnt thorughout the course && Use google chart && Web Components.</p>
     </section>
     <article class="container-exercises">
-       <user-card name="Jose Luis Matias Pineda" ></user-card>
-       <user-card name="Mariana Galan Tames" ></user-card>
+
+        <div id="piechart" style="width: 900px; height: 500px;"></div>
+       <chart-jose name="Joselito's Chart"></chart-jose>
     </article>
     <script type="module" src="/javascript/index.js"></script>
 </body>

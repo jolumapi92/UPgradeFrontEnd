@@ -272,12 +272,13 @@ body {
       position: relative;
   }
 
-  user-card {
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    width: 80%;
-    margin: 10px;
-    padding: 1em;
-    border-radius: 12px;
+  
+
+  .instrunctions-landing {
+    position: absolute;
+    bottom: 0;
+    font-weight: 100;
+    font-size: 20px;
   }
 
   .container-exercises-floating-box {

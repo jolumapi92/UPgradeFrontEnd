@@ -1,4 +1,3 @@
-import { UserCard } from "./card.js";
+import { Chart } from "./chart.js"
 
-
-window.customElements.define("user-card", UserCard);
+window.customElements.define('chart-jose', Chart)
