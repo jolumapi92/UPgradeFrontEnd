@@ -40,19 +40,41 @@ class ChartAPI extends HTMLElement {
         const low2 = Number(info['Time Series (5min)']['2021-12-30 11:10:00']['3. low'])
         const low3 = Number(info['Time Series (5min)']['2021-12-30 12:10:00']['3. low'])
         const low4 = Number(info['Time Series (5min)']['2021-12-30 13:10:00']['3. low'])
-        const low5 = Number(info['Time Series (5min)']['2021-12-30 14:10:00']['3. low'])
+        
+        
+        const keys = Object.keys(info['Time Series (5min)'])
+        const firstArray = [];
+        
+        for (let index = 0; index < keys.length; index++) {
+           console.log( info['Time Series (5min)'][keys[index]]['2. high'] )
+           console.log( info['Time Series (5min)'][keys[index]]['3. low'] )
+            let creatingArray = [];
+            let phrase = '';
+            phrase += index;
+            phrase += 'hr';
+
+            if (index === 0) {
+                creatingArray.push("Hour")
+                creatingArray.push('High')
+                creatingArray.push('Low')
+            } else {
+                creatingArray.push( phrase );
+                creatingArray.push( Number(info['Time Series (5min)'][keys[index]]['2. high']) )
+                creatingArray.push( Number(info['Time Series (5min)'][keys[index]]['3. low']) )
+            }
+            
+
+            firstArray.push( creatingArray );
+        }
+
+        console.log(firstArray);
+        
 
         google.charts.load('current', {'packages':['corechart']});
         google.charts.setOnLoadCallback(drawChart);
 
       function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Hour', 'High', 'Low'],
-          ['1hr',  high,      low],
-          ['2hr',  high2,      low2],
-          ['3hr',  high3,       low3],
-          ['4hr',  high4,      low4]
-        ]);
+        var data = google.visualization.arrayToDataTable(firstArray);
 
         var options = {
           title: 'Company Performance',
