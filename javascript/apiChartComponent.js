@@ -26,21 +26,6 @@ class ChartAPI extends HTMLElement {
         const info = await getINFO();
         console.log(info);
         const name = info["Meta Data"]["2. Symbol"];
-        const now = new Date();
-        const yesterday = new Date();
-
-        const high = Number(info['Time Series (5min)']['2021-12-30 10:10:00']['2. high'])
-        const high2 = Number(info['Time Series (5min)']['2021-12-30 11:10:00']['2. high'])
-        const high3 = Number(info['Time Series (5min)']['2021-12-30 12:10:00']['2. high'] )
-        const high4 = Number( info['Time Series (5min)']['2021-12-30 13:10:00']['2. high'] )
-        const high5 = Number( info['Time Series (5min)']['2021-12-30 14:10:00']['2. high'] )
-
-
-        const low = Number(info['Time Series (5min)']['2021-12-30 10:10:00']['3. low'])
-        const low2 = Number(info['Time Series (5min)']['2021-12-30 11:10:00']['3. low'])
-        const low3 = Number(info['Time Series (5min)']['2021-12-30 12:10:00']['3. low'])
-        const low4 = Number(info['Time Series (5min)']['2021-12-30 13:10:00']['3. low'])
-        
         
         const keys = Object.keys(info['Time Series (5min)'])
         const firstArray = [];
