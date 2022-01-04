@@ -296,6 +296,38 @@ chart-api {
   margin: 50px;
 }
 
+footer {
+  background-color: #d1ceff;
+  border-radius: 8px;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 20px;
+  height: 15vh;
+  width: 80%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer input {
+  margin: 0px 20px;
+}
+
+#btn-to-create-object {
+  padding: 8px 15px;
+  border-radius: 22px;
+  background-color: #6C63FF;
+  color: white;
+  border: none;
+}
+
 .container-exercises-floating-box {
   height: 100%;
   width: 100%;
