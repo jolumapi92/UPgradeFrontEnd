@@ -1,0 +1,23 @@
+{
+  "name": "upgrade",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jolumapi92/UPgradeFrontEnd.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jolumapi92/UPgradeFrontEnd/issues"
+  },
+  "homepage": "https://github.com/jolumapi92/UPgradeFrontEnd#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
