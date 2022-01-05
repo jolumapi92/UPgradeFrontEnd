@@ -1,4 +1,4 @@
-import { getINFO } from "./apiConsumption.js";
+import { drawChartLine, drawChartBar, drawChartHistogram, drawChartArea, ScatterChart } from "./functionsTypes.js";
 
 const template = document.createElement("template");
 template.innerHTML = `
@@ -10,9 +10,19 @@ template.innerHTML = `
             color: white;
             border: none;
         }
+        select {
+          margin: 10px 10px;
+        }
     </style>
     <h3> </h3>
-    <button> API </button>
+    <select id="chart-select">
+        <option value="LineChart" selected>LineChart</option>
+        <option value="BarChart">BarChart</option>
+        <option value="Histogram">Histogram</option>
+        <option value="AreaChart">AreaChart</option>
+        <option value="ScatterChart">ScatterChart</option>
+    </select>
+    <button> Render </button>
 `;
 
 class ChartAPI extends HTMLElement {
@@ -22,64 +32,50 @@ class ChartAPI extends HTMLElement {
     this.shadowRoot.appendChild(template.content.cloneNode(true));
     this.shadowRoot.querySelector("h3").innerText = this.getAttribute("name");
   }
-  async getAPI() {
-    const info = await getINFO();
-    console.log(info);
-    const name = info["Meta Data"]["2. Symbol"];
+  async getAPI(type, url) {
 
-    const keys = Object.keys(info["Time Series (5min)"]);
-    const firstArray = [];
-
-    for (let index = 0; index < keys.length; index++) {
-      console.log(info["Time Series (5min)"][keys[index]]["2. high"]);
-      console.log(info["Time Series (5min)"][keys[index]]["3. low"]);
-      let creatingArray = [];
-      let phrase = "";
-      phrase += index;
-      phrase += "hr";
-
-      if (index === 0) {
-        creatingArray.push("Hour");
-        creatingArray.push("High");
-        creatingArray.push("Low");
-      } else {
-        creatingArray.push(phrase);
-        creatingArray.push(
-          Number(info["Time Series (5min)"][keys[index]]["2. high"])
-        );
-        creatingArray.push(
-          Number(info["Time Series (5min)"][keys[index]]["3. low"])
-        );
-      }
-
-      firstArray.push(creatingArray);
-    }
-
-    console.log(firstArray);
-
-    google.charts.load("current", { packages: ["corechart"] });
-    google.charts.setOnLoadCallback(drawChart);
-
-    function drawChart() {
-      var data = google.visualization.arrayToDataTable(firstArray);
-
-      var options = {
-        title: "Company Performance",
-        curveType: "function",
-        legend: { position: "bottom" },
-      };
-
-      var chart = new google.visualization.LineChart(
-        document.getElementById("curve_chart")
-      );
-
-      chart.draw(data, options);
+    switch (type) {
+      case "LineChart":
+        google.charts.load("current", {
+          packages: ["corechart"],
+          callback: drawChartLine(url),
+        });
+        break;
+      case "BarChart":
+        google.charts.load("current", {
+          packages: ["corechart"],
+          callback: drawChartBar(url),
+        });
+        break;
+      case "Histogram":
+        google.charts.load("current", {
+          packages: ["corechart"],
+          callback: drawChartHistogram(url),
+        });
+        break;
+      case "AreaChart":
+        google.charts.load("current", {
+          packages: ["corechart"],
+          callback: drawChartArea(url),
+        });
+        break;
+      case "ScatterChart":
+        google.charts.load("current", {
+          packages: ["corechart"],
+          callback: ScatterChart(url),
+        });
+        break;
+      default:
+        break;
     }
   }
 
   connectedCallback() {
     this.shadowRoot.querySelector("button").addEventListener("click", () => {
-      this.getAPI();
+      const url = this.getAttribute('url')
+      const typeSelect = this.shadowRoot.querySelector('#chart-select').value
+      console.log("Este es el bueno", typeSelect);
+      this.getAPI(typeSelect, url);
     });
   }
 }
