@@ -322,6 +322,10 @@ user-card {
   overflow: scroll;
 }
 
+#insert-here-person::-webkit-scrollbar {
+  display: none;
+}
+
 footer {
   background-color: #d1ceff;
   border-radius: 8px;

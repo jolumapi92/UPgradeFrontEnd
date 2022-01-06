@@ -15,9 +15,9 @@ btn.addEventListener("click", function(){
     let section = document.querySelector('#insert-here-person')!
     let card = document.createElement('user-card');
     card.shadowRoot!.querySelector('h2')!.innerText = name.value;
+    card.shadowRoot!.querySelector('h4')!.innerText = Math.floor(Math.random() * 100).toString();
     card.shadowRoot!.getElementById('job')!.innerText = job.value;
     card.shadowRoot!.getElementById('age')!.innerText = age.value;
-
     section.appendChild(card);
     
     

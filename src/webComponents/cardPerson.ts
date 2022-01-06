@@ -6,7 +6,7 @@ template.innerHTML = `
     }
     </style>
     <div>
-        <h4> ID. ${Math.floor(Math.random() * 100)} </h4>
+        <h4> ID.  </h4>
         <h2> Name </h2>
         <p id="job">  Job </p>
         <p id="age">  Age </p>
