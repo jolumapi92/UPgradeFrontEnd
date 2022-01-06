@@ -289,6 +289,22 @@ body {
     margin: 50px;
   } 
 
+  user-card {
+    width: 80%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 10px;
+    margin: 15px;
+    border-radius: 12px;
+  }
+
+  #insert-here-person {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: scroll;
+  }
+
   footer {
     background-color: #d1ceff;
     border-radius: 8px;
