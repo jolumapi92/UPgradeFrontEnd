@@ -1,6 +1,6 @@
 import { getINFO } from "./apiConsumption.js";
-export async function drawChartLine(url, container) {
-  const info = await getINFO(url);
+export async function drawChartLine(url, container, company) {
+  const info = await getINFO(url, company);
   const keys = Object.keys(info["Time Series (5min)"]);
   let firstArray = [];
 
@@ -37,8 +37,8 @@ export async function drawChartLine(url, container) {
   chart.draw(data, options);
 }
 
-export async function drawChartBar(url, container) {
-  const info = await getINFO(url);
+export async function drawChartBar(url, container, company) {
+  const info = await getINFO(url, company);
 
   const keys = Object.keys(info["Time Series (5min)"]);
   let firstArray = [];
@@ -75,8 +75,8 @@ export async function drawChartBar(url, container) {
   chart.draw(data, options);
 }
 
-export async function drawChartHistogram(url, container) {
-  const info = await getINFO(url);
+export async function drawChartHistogram(url, container, company) {
+  const info = await getINFO(url, company);
 
   const keys = Object.keys(info["Time Series (5min)"]);
   let firstArray = [];
@@ -113,8 +113,8 @@ export async function drawChartHistogram(url, container) {
   chart.draw(data, options);
 }
 
-export async function drawChartArea(url, container) {
-  const info = await getINFO(url);
+export async function drawChartArea(url, container, company) {
+  const info = await getINFO(url, company);
 
   const keys = Object.keys(info["Time Series (5min)"]);
   let firstArray = [];
@@ -151,8 +151,8 @@ export async function drawChartArea(url, container) {
   chart.draw(data, options);
 }
 
-export async function ScatterChart(url, container) {
-  const info = await getINFO(url);
+export async function ScatterChart(url, container, company) {
+  const info = await getINFO(url, company);
 
   const keys = Object.keys(info["Time Series (5min)"]);
   let firstArray = [];
