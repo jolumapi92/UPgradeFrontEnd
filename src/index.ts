@@ -11,7 +11,8 @@ window.customElements.define('user-card', CardPerson);
 
 btn.addEventListener("click", function(){
     
-    const onePerson = new Person( name.value, age.valueAsNumber,  job.value )
+    const onePerson = new Person( name.value, age.valueAsNumber,  job.value );
+    console.log(onePerson);
     let section = document.querySelector('#insert-here-person')!
     let card = document.createElement('user-card');
     card.shadowRoot!.querySelector('h2')!.innerText = name.value;
